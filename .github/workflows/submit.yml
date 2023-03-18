@@ -13,6 +13,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/labeler@v4
       - shell: pwsh
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: |
           iwr https://aka.ms/wingetcreate/latest -OutFile wingetcreate.exe
           $Installer_x64_url = "https://github.com/v2rayA/v2rayA/releases/download/v2.0.2/installer_windows_inno_x64_2.0.2.exe"

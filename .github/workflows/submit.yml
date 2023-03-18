@@ -5,13 +5,13 @@ on:
     types: [published]
 
 jobs:
-  build:
+  winget:
     runs-on: "windows-latest"
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Run PR
+      - uses: actions/labeler@v4
         shell: pwsh
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
